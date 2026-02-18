@@ -10,6 +10,12 @@ fn factorial(num: u64) -> u64 {
     // - additional variables
     // For an extra challenge, don't use:
     // - recursion
+
+    // (1..num + 1).reduce(|acc, n| acc * n).unwrap_or(1) // naive
+
+    // (2..=num).fold(1, |acc, x| acc * x) // folding
+
+    (2..=num).product() // product returns 1 if iterator is empty
 }
 
 fn main() {
